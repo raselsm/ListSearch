@@ -1,22 +1,17 @@
 package com.rasel.listsearch;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private TextView countTv;
     MenuItem cartIconMenuItem;
     private int mCount = 0;
@@ -28,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_search);
 
         /*Toolbar mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -62,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         View cartImageButtonwMenuItem;
         if (actionView != null) {
             countTv = actionView.findViewById(R.id.count_tv);
-            countTv.setText(String.valueOf(MainActivity.mCount));
+            countTv.setText(String.valueOf(SearchActivity.mCount));
             cartImageButtonwMenuItem = actionView.findViewById(R.id.cart_ic_image);
             cartImageButtonwMenuItem.setOnClickListener(new View.OnClickListener() {
                 @Override
